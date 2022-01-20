@@ -17,6 +17,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JDialog;
+import report.laporan_pegawai;
 
 /**
  *
@@ -159,7 +160,7 @@ public class Pegawai extends javax.swing.JFrame {
         getContentPane().add(telp);
         telp.setBounds(250, 220, 140, 40);
 
-        tgl_lahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2021-11-08" }));
+        tgl_lahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2021-11-09" }));
         tgl_lahir.setDisplayFormat("yyyy-MM-dd");
         getContentPane().add(tgl_lahir);
         tgl_lahir.setBounds(250, 270, 140, 40);
@@ -236,6 +237,11 @@ public class Pegawai extends javax.swing.JFrame {
         keluar.setBounds(630, 430, 100, 50);
 
         laporan.setText("jButton1");
+        laporan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                laporanActionPerformed(evt);
+            }
+        });
         getContentPane().add(laporan);
         laporan.setBounds(853, 430, 100, 50);
 
@@ -401,6 +407,11 @@ public class Pegawai extends javax.swing.JFrame {
         hapus.setEnabled(true);
         keluar.setEnabled(true);
     }//GEN-LAST:event_cariActionPerformed
+
+    private void laporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanActionPerformed
+        // TODO add your handling code here:
+        new laporan_pegawai().setVisible(true);
+    }//GEN-LAST:event_laporanActionPerformed
 
     /**
      * @param args the command line arguments

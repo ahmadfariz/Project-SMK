@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.100000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="25"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pegawai.`nip` AS pegawai_nip,
+     pegawai.`nama` AS pegawai_nama,
+     pegawai.`alamat` AS pegawai_alamat,
+     pegawai.`telp` AS pegawai_telp,
+     pegawai.`tgl_lahir` AS pegawai_tgl_lahir,
+     pegawai.`jenkel` AS pegawai_jenkel
+FROM
+     `pegawai` pegawai]]>
+	</queryString>
+	<field name="pegawai_nip" class="java.lang.String"/>
+	<field name="pegawai_nama" class="java.lang.String"/>
+	<field name="pegawai_alamat" class="java.lang.String"/>
+	<field name="pegawai_telp" class="java.lang.String"/>
+	<field name="pegawai_tgl_lahir" class="java.lang.String"/>
+	<field name="pegawai_jenkel" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="123" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POLIKLINIK BINA CIDEKA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="87" width="555" height="36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[PASURUAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[JL. Panglima Sudirman]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="14" width="112" height="109"/>
+				<imageExpression><![CDATA["E:\\Pemrograman Berorientasi Obyek\\Image\\medical-team.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="59" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PEGAWAI]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="422" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="421" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="5.0"/>
+				</graphicElement>
+			</line>
+			<elementGroup>
+				<rectangle>
+					<reportElement x="138" y="51" width="130" height="32" forecolor="#CCCCFF" backcolor="#CCCCCC"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="138" y="51" width="130" height="32"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NIP]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="291" y="52" width="98" height="32"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pegawai_nip}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<rectangle>
+					<reportElement x="138" y="115" width="130" height="32" forecolor="#CCCCFF" backcolor="#CCCCCC"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="138" y="115" width="130" height="32"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NAMA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="291" y="115" width="98" height="32"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pegawai_nama}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<rectangle>
+					<reportElement x="138" y="176" width="130" height="32" forecolor="#CCCCFF" backcolor="#CCCCCC"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="138" y="176" width="130" height="32"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ALAMAT]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="291" y="176" width="98" height="32"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pegawai_alamat}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<rectangle>
+					<reportElement x="138" y="237" width="130" height="32" forecolor="#CCCCFF" backcolor="#CCCCCC"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="138" y="237" width="130" height="32"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NO TELP]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="291" y="237" width="120" height="32"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pegawai_telp}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<rectangle>
+					<reportElement x="138" y="295" width="130" height="32" forecolor="#CCCCFF" backcolor="#CCCCCC"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="138" y="295" width="130" height="32"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TGL LAHIR]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="291" y="295" width="98" height="32"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pegawai_tgl_lahir}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<elementGroup>
+				<rectangle>
+					<reportElement x="138" y="356" width="130" height="32" forecolor="#CCCCFF" backcolor="#CCCCCC"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="138" y="356" width="130" height="32"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[JK]]></text>
+				</staticText>
+			</elementGroup>
+			<textField>
+				<reportElement x="291" y="356" width="98" height="32"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pegawai_jenkel}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="5.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+</jasperReport>
