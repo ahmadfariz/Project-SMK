@@ -153,14 +153,26 @@ public class Pegawai extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(450, 90, 590, 280);
+
+        nip.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nipKeyTyped(evt);
+            }
+        });
         getContentPane().add(nip);
         nip.setBounds(250, 50, 140, 40);
         getContentPane().add(nama);
         nama.setBounds(250, 100, 140, 40);
+
+        telp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telpKeyTyped(evt);
+            }
+        });
         getContentPane().add(telp);
         telp.setBounds(250, 220, 140, 40);
 
-        tgl_lahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2021-11-09" }));
+        tgl_lahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2022-01-17" }));
         tgl_lahir.setDisplayFormat("yyyy-MM-dd");
         getContentPane().add(tgl_lahir);
         tgl_lahir.setBounds(250, 270, 140, 40);
@@ -324,6 +336,18 @@ public class Pegawai extends javax.swing.JFrame {
         tambah();
     }//GEN-LAST:event_tambahActionPerformed
 
+    void filterhuruf (KeyEvent a) {
+        if(Character.isAlphabetic(a.getKeyChar()))
+            a.consume();
+        JOptionPane.showMessageDialog(null, "Hanya Di Isi Angka");
+    }
+    
+    void filterangka (KeyEvent b) {
+        if(Character.isDigit(b.getKeyChar()))
+            b.consume();
+        JOptionPane.showMessageDialog(null, "Hanya Di Isi Angka");
+    }
+    
     private void tabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMouseClicked
         // TODO add your handling code here:
         tabel_tampil();
@@ -412,6 +436,16 @@ public class Pegawai extends javax.swing.JFrame {
         // TODO add your handling code here:
         new laporan_pegawai().setVisible(true);
     }//GEN-LAST:event_laporanActionPerformed
+
+    private void nipKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nipKeyTyped
+        // TODO add your handling code here:
+        filterhuruf(evt);
+    }//GEN-LAST:event_nipKeyTyped
+
+    private void telpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telpKeyTyped
+        // TODO add your handling code here:
+        filterhuruf(evt);
+    }//GEN-LAST:event_telpKeyTyped
 
     /**
      * @param args the command line arguments
